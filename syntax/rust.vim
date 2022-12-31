@@ -255,7 +255,7 @@ syn keyword rustAsmOptions pure nomem readonly preserves_flags noreturn nostack 
 " Folding rules {{{2
 " Trivial folding rules to begin with.
 " FIXME: use the AST to make really good folding
-syn region rustFoldBraces start="{" end="}" transparent fold
+syn region rustFoldBraces start="{"ms=s+1 end="}"me=e-1 transparent fold
 
 if !exists("b:current_syntax_embed")
     let b:current_syntax_embed = 1
